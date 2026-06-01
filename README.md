@@ -1,2 +1,2 @@
-# CS231n Final Project
+# Clean Enough to Recycle? A Multi-Task CV Approach to Contamination-Aware Waste Sorting
 Loading...
