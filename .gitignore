@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# macOS
+.DS_Store
+
+# Model files (large binary files)
+*.pt
+
+# Datasets (large, not tracked in git)
+zerowaste/
+TACO/data/
