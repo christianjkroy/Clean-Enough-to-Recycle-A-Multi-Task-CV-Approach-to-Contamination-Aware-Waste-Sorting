@@ -1,17 +1,17 @@
 # Clean Enough to Recycle?
 
-A multi-task computer vision pipeline for contamination-aware waste sorting - classifying waste type and detecting whether contamination is present and where.
+A multi-task computer vision pipeline for contamination-aware waste sorting, classifying waste type and detecting whether contamination is present and where.
 
 Train a model on clean waste images, optionally augment with synthetic contamination, and evaluate on real-world contaminated samples from TACO. Four experimental conditions progressively add heads and augmentation to isolate each component's contribution.
 
 ## What it does
 
-- **Waste classification** - ResNet-50 backbone maps images to one of four waste categories (ZeroWaste labels)
-- **Contamination presence detection** - binary head with asymmetric loss (false negatives penalized 5×) predicts whether an item is contaminated
-- **Contamination localization** - decoder upsamples backbone features to a pixel-level segmentation mask
-- **Synthetic augmentation** - blob-based compositor overlays grease, residue, and liquid textures onto clean images at configurable probability
-- **GradCAM visualization** - gradient-weighted activation maps for the presence head highlight what drives contamination predictions
-- **WandB logging** - optional experiment tracking with per-step loss and metric curves
+- **Waste classification:** ResNet-50 backbone maps images to one of four waste categories (ZeroWaste labels)
+- **Contamination presence detection:** binary head with asymmetric loss (false negatives penalized 5×) predicts whether an item is contaminated
+- **Contamination localization:** decoder upsamples backbone features to a pixel-level segmentation mask
+- **Synthetic augmentation:** blob-based compositor overlays grease, residue, and liquid textures onto clean images at configurable probability
+- **GradCAM visualization:** gradient-weighted activation maps for the presence head highlight what drives contamination predictions
+- **WandB logging:** optional experiment tracking with per-step loss and metric curves
 
 ## Experimental conditions
 
@@ -22,7 +22,7 @@ Train a model on clean waste images, optionally augment with synthetic contamina
 | B2 | classification · presence · localization | yes |
 | B3 | classification · presence · localization | yes |
 
-B2 and B3 are identical in head configuration - use them for replicated runs.
+B2 and B3 are identical in head configuration; use them for replicated runs.
 
 ## Architecture
 
@@ -93,8 +93,8 @@ python train.py --condition B3 --zerowaste_root /path/to/zerowaste --wandb
 
 ZeroWaste and TACO are not included in this repository.
 
-- **ZeroWaste** - download from the ZeroWaste project; point `--zerowaste_root` at the directory containing `splits_final_deblurred/`
-- **TACO** - cloned as a submodule at `TACO/`; run `python TACO/download.py` to fetch images, then build a JSON index with `image_path`, `contam`, and optional `mask_path` per entry
+- **ZeroWaste:** download from the ZeroWaste project; point `--zerowaste_root` at the directory containing `splits_final_deblurred/`
+- **TACO:** cloned as a submodule at `TACO/`; run `python TACO/download.py` to fetch images, then build a JSON index with `image_path`, `contam`, and optional `mask_path` per entry
 
 ## Notes
 
@@ -102,4 +102,4 @@ The presence head uses an asymmetric positive weight (`fn_pos_weight`, default 5
 
 Synthetic contamination runs only for B2/B3 and fires with 50% probability per sample. The compositor blends grease, residue, or liquid textures using Gaussian blob alpha masks.
 
-GradCAM is computed against the presence head only (`PresenceGradCAM` in `gradcam.py`) - localization head outputs can be visualized directly as sigmoid maps.
+GradCAM is computed against the presence head only (`PresenceGradCAM` in `gradcam.py`); localization head outputs can be visualized directly as sigmoid maps.
