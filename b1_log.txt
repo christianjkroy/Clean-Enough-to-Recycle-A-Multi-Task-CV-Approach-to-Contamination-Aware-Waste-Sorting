@@ -1,2 +1,20 @@
 device: mps
 test set: 491 images, 21 contaminated
+/Users/christianroy/Desktop/contam_cv/datasets.py:52: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/ec2-user/croot/libtorch_1776176573423/work/torch/csrc/utils/tensor_numpy.cpp:219.)
+  s["mask"]=(torch.from_numpy(np.asarray(m))>127).float(); s["has_mask"]=True
+epoch 1/15 — pres_f1 0.089 recall 0.429 mIoU 0.008 — 233s
+epoch 2/15 — pres_f1 0.097 recall 0.714 mIoU 0.007 — 230s
+epoch 3/15 — pres_f1 0.096 recall 0.619 mIoU 0.004 — 7382s
+epoch 4/15 — pres_f1 0.093 recall 0.476 mIoU 0.003 — 3451s
+epoch 5/15 — pres_f1 0.103 recall 0.429 mIoU 0.005 — 228s
+epoch 6/15 — pres_f1 0.110 recall 0.619 mIoU 0.004 — 231s
+epoch 7/15 — pres_f1 0.104 recall 0.714 mIoU 0.004 — 236s
+epoch 8/15 — pres_f1 0.099 recall 0.762 mIoU 0.003 — 227s
+epoch 9/15 — pres_f1 0.106 recall 0.524 mIoU 0.003 — 234s
+epoch 10/15 — pres_f1 0.115 recall 0.762 mIoU 0.003 — 232s
+epoch 11/15 — pres_f1 0.070 recall 0.333 mIoU 0.002 — 237s
+epoch 12/15 — pres_f1 0.114 recall 0.286 mIoU 0.002 — 229s
+epoch 13/15 — pres_f1 0.131 recall 0.333 mIoU 0.001 — 230s
+epoch 14/15 — pres_f1 0.141 recall 0.333 mIoU 0.004 — 226s
+epoch 15/15 — pres_f1 0.024 recall 0.048 mIoU 0.003 — 231s
+saved b1_trained.pt

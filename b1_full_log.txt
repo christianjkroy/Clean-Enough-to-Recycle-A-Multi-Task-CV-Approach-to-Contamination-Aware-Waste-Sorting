@@ -1,0 +1,2 @@
+device: mps
+test set: 1403 images, 100 contaminated
