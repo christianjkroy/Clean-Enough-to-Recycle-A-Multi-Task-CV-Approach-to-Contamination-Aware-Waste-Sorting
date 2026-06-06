@@ -1,4 +1,4 @@
-# Clean Enough to Recycle?
+# Clean Enough to Recycle? A Multi-Task CV Approach to Contamination-Aware Waste Sorting
 
 A multi-task computer vision pipeline for contamination-aware waste sorting, classifying waste type and detecting whether contamination is present and where.
 
